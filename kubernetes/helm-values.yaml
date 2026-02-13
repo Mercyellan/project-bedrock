@@ -1,0 +1,50 @@
+# Retail Store Sample App - Helm Values
+# This file configures the deployment of the retail-store-sample-app
+# to the EKS cluster in the retail-app namespace
+
+# Catalog service configuration
+catalog:
+  enabled: true
+  database:
+    type: mysql
+    persistence:
+      enabled: true
+
+# Orders service configuration
+orders:
+  enabled: true
+  database:
+    type: postgresql
+    persistence:
+      enabled: true
+
+# Checkout service configuration
+checkout:
+  enabled: true
+  redis:
+    enabled: true
+
+# Cart service configuration
+carts:
+  enabled: true
+
+# Assets service configuration
+assets:
+  enabled: true
+
+# RabbitMQ for message queue
+rabbitmq:
+  enabled: true
+
+# UI Configuration
+ui:
+  service:
+    type: LoadBalancer
+  # Configure endpoints to use the full service names (release-name prefix)
+  # This fixes DNS resolution - services are named retail-store-sample-<service>
+  endpoints:
+    catalog: http://retail-store-sample-catalog:80
+    carts: http://retail-store-sample-carts:80
+    checkout: http://retail-store-sample-checkout:80
+    orders: http://retail-store-sample-orders:80
+    assets: http://retail-store-sample-assets:80

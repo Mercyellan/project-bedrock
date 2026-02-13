@@ -1,4 +1,7 @@
+
+# Environment variables 
 .env
+.env.*
 
 # Terraform
 .terraform/
@@ -6,6 +9,25 @@
 *.tfstate.*
 *.tfplan
 .terraform.lock.hcl
+crash.log
+crash.*.log
+
+# Lambda
+lambda/lambda_function.zip
 
 # OS
 .DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.bak
+
+# Sensitive outputs - DO NOT COMMIT
+secrets.json
