@@ -7,7 +7,7 @@ variable "project_name" {
 variable "student_id" {
   description = "Student ID for unique resource naming"
   type        = string
-  default     = "bucket bedrock-assets-alt-soe-025-1516"
+  default     = "alt-soe-025-1516"
 }
 
 variable "vpc_cidr" {

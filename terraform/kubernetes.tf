@@ -1,3 +1,4 @@
+
 #------------------------------------------------------------------------------
 # Kubernetes Namespace
 #------------------------------------------------------------------------------
@@ -20,7 +21,7 @@ resource "helm_release" "retail_store" {
   version    = "0.8.5"
 
   # Use custom values file for proper service endpoint configuration
-  values = [file("${path.module}/kubernetes/helm-values.yaml")]
+  values = [file("${path.module}/../kubernetes/helm-values.yaml")]
 
   # Wait for the deployment to complete
   wait    = true

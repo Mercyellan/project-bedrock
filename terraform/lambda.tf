@@ -26,8 +26,8 @@ resource "aws_lambda_function" "asset_processor" {
 #------------------------------------------------------------------------------
 data "archive_file" "lambda_zip" {
   type        = "zip"
-  source_file = "${path.module}/lambda/index.py"
-  output_path = "${path.module}/lambda/lambda_function.zip"
+  source_file = "${path.module}/../lambda/index.py"
+  output_path = "${path.module}/../lambda/lambda_function.zip"
 }
 
 #------------------------------------------------------------------------------
