@@ -1,4 +1,3 @@
-
 name: Terraform CI/CD
 
 on:
@@ -38,16 +37,20 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: terraform
 
       - name: Terraform Format Check
         run: terraform fmt -check
+        working-directory: terraform
         continue-on-error: true
 
       - name: Terraform Validate
         run: terraform validate
+        working-directory: terraform
 
       - name: Terraform Plan
         run: terraform plan -no-color
+        working-directory: terraform
         continue-on-error: false
 
   terraform-apply:
@@ -73,16 +76,20 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: terraform
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
+        working-directory: terraform
 
       - name: Generate Grading Output
         run: terraform output -json > grading.json
+        working-directory: terraform
 
       - name: Upload Grading Artifact
         uses: actions/upload-artifact@v4
         with:
           name: grading-output
-          path: grading.json
+          path: terraform/grading.json
           retention-days: 30
+          
