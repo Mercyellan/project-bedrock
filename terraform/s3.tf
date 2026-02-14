@@ -48,8 +48,3 @@ resource "aws_s3_bucket_notification" "assets_notification" {
 
   depends_on = [aws_lambda_permission.allow_s3]
 }
-
-#------------------------------------------------------------------------------
-# Data source for AWS account ID
-#------------------------------------------------------------------------------
-data "aws_caller_identity" "current" {}

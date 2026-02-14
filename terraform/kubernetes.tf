@@ -1,4 +1,3 @@
-
 #------------------------------------------------------------------------------
 # Kubernetes Namespace
 #------------------------------------------------------------------------------
@@ -7,7 +6,10 @@ resource "kubernetes_namespace" "retail_app" {
     name = "retail-app"
   }
 
-  depends_on = [aws_eks_node_group.main]
+  depends_on = [
+    aws_eks_node_group.main,
+    aws_eks_access_policy_association.terraform_executor_admin
+  ]
 }
 
 #------------------------------------------------------------------------------
