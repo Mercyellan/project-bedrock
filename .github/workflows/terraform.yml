@@ -11,7 +11,7 @@ on:
 
 env:
   AWS_REGION: us-east-1
-  TF_VERSION: "1.7.0"
+  TF_VERSION: "1.10.0"
 
 jobs:
   terraform-plan:
@@ -92,4 +92,3 @@ jobs:
           name: grading-output
           path: terraform/grading.json
           retention-days: 30
-          

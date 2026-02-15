@@ -1,3 +1,4 @@
+
 # Retail Store Sample App - Helm Values
 # This file configures the deployment of the retail-store-sample-app
 # to the EKS cluster in the retail-app namespace
@@ -5,6 +6,9 @@
 # Catalog service configuration
 catalog:
   enabled: true
+  image:
+    repository: public.ecr.aws/aws-containers/retail-store-sample-catalog
+    tag: "1.4.0"
   database:
     type: mysql
     persistence:
@@ -13,6 +17,9 @@ catalog:
 # Orders service configuration
 orders:
   enabled: true
+  image:
+    repository: public.ecr.aws/aws-containers/retail-store-sample-orders
+    tag: "1.4.0"
   database:
     type: postgresql
     persistence:
@@ -21,16 +28,25 @@ orders:
 # Checkout service configuration
 checkout:
   enabled: true
+  image:
+    repository: public.ecr.aws/aws-containers/retail-store-sample-checkout
+    tag: "1.4.0"
   redis:
     enabled: true
 
 # Cart service configuration
 carts:
   enabled: true
+  image:
+    repository: public.ecr.aws/aws-containers/retail-store-sample-cart
+    tag: "1.4.0"
 
 # Assets service configuration
 assets:
   enabled: true
+  image:
+    repository: public.ecr.aws/aws-containers/retail-store-sample-assets
+    tag: "1.4.0"
 
 # RabbitMQ for message queue
 rabbitmq:
@@ -38,6 +54,9 @@ rabbitmq:
 
 # UI Configuration
 ui:
+  image:
+    repository: public.ecr.aws/aws-containers/retail-store-sample-ui
+    tag: "1.4.0"
   service:
     type: LoadBalancer
   # Configure endpoints to use the full service names (release-name prefix)
