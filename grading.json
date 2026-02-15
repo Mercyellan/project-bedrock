@@ -7,12 +7,12 @@
   "developer_access_key_id": {
     "sensitive": false,
     "type": "string",
-    "value": "AKIAY4RRUGDGQOLD4YUY"
+    "value": "*** SENSITIVE VALUE***"
   },
   "developer_secret_access_key": {
     "sensitive": true,
     "type": "string",
-    "value": "Af2m5BcnjXh2d0JpZ4yFEaFprlTAXWo0U4CFDra+"
+    "value": "*** SENSITIVE VALUE***"
   },
   "eks_cluster_endpoint": {
     "sensitive": false,
